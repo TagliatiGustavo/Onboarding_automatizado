@@ -12,7 +12,7 @@ Histórias priorizadas pelo método **MoSCoW** (Must/Should).
 | --- | --- | --- | --- | --- |
 | **US01** | Como cliente, quero preencher um formulário de cadastro para iniciar o onboarding. | **Must** | To Do | Sprint 1 |
 | **US02** | Como sistema, quero validar os dados do formulário no backend para garantir consistência. | **Must** | To Do | Sprint 1 |
-| **US03** | Como sistema, quero criar automaticamente o cliente na Runy via N8N após validação. | **Must** | To Do | Sprint 1 |
+| **US03** | Como sistema, quero criar automaticamente o cliente na plataforma via N8N após validação. | **Must** | To Do | Sprint 1 |
 | **US07** | Como cliente, quero ser notificado em caso de falha no cadastro para saber como proceder. | **Must** | To Do | Sprint 1 |
 | **US04** | Como sistema, quero replicar o cadastro do cliente no CRM para centralizar informações comerciais. | **Should** | To Do | Sprint 2 |
 | **US05** | Como sistema, quero enviar e-mail de boas-vindas automaticamente ao cliente cadastrado. | **Should** | To Do | Sprint 2 |
@@ -27,7 +27,7 @@ Histórias priorizadas pelo método **MoSCoW** (Must/Should).
 | --- | ---: | --- | --- | ---: | --- | --- | --- |
 | Formulário de Cadastro | US01 | Como cliente, quero preencher um formulário de cadastro para iniciar o onboarding, garantindo coleta correta dos dados essenciais. | Must | Sprint 1 | Todos os campos obrigatórios validados; mensagem de sucesso exibida; UX responsiva. | `prototipos/Formulario-Figma.pdf` | Integração com backend para validação; validações front-end. |
 | Validação Backend | US02 | Como sistema, quero validar os dados do formulário no backend para impedir cadastros inválidos. | Must | Sprint 1 | Regras de validação aplicadas; entradas inválidas rejeitadas com mensagens claras; logs registrados. | — | Regras de negócio definidas; testes automatizados. |
-| Criação de Cliente na Runy | US03 | Como sistema, quero criar automaticamente o cliente na Runy via N8N após validação. | Must | Sprint 1 | Cliente criado corretamente na Runy; respostas de erro tratadas. | — | API Runy disponível; credenciais válidas; fluxo N8N configurado. |
+| Criação de Cliente na plataforma | US03 | Como sistema, quero criar automaticamente o cliente na plataforma via N8N após validação. | Must | Sprint 1 | Cliente criado corretamente na Runy; respostas de erro tratadas. | — | API Runy disponível; credenciais válidas; fluxo N8N configurado. |
 | Notificação de Falha (Cliente) | US07 | Como cliente, quero ser notificado em caso de falha no cadastro para saber como proceder. | Must | Sprint 1 | Notificação enviada ao cliente com instruções; fallback de retry definido. | — | Integração N8N; servidor de e-mail configurado. |
 | Criação de Cliente no CRM | US04 | Como sistema, quero replicar o cadastro do cliente no CRM para centralizar informações comerciais. | Should | Sprint 2 | Cliente criado no CRM com mapeamento correto de campos. | — | API CRM disponível; mapeamento de campos definido. |
 | E-mail de Boas-vindas | US05 | Como sistema, quero enviar e-mail de boas-vindas automaticamente ao cliente cadastrado. | Should | Sprint 2 | E-mail enviado com template aprovado; link de próximos passos incluso. | — | Template aprovado; servidor de envio configurado. |
@@ -51,7 +51,7 @@ Histórias priorizadas pelo método **MoSCoW** (Must/Should).
 
 | ID | User Story | Prioridade | Status | Sprint | Tasks Detalhadas |
 | --- | --- | --- | --- | --- | --- |
-| US03 | Como sistema, quero criar o cliente automaticamente na Runy via N8N após validação. | Must | To Do | Sprint 1 | - Mapear campos do formulário para API Runy<br>- Criar fluxo de automação no N8N<br>- Implementar tratamento de erros e retries<br>- Testes de integração (success/failure) |
+| US03 | Como sistema, quero criar o cliente automaticamente na plataforma via N8N após validação. | Must | To Do | Sprint 1 | - Mapear campos do formulário para API plataforma<br>- Criar fluxo de automação no N8N<br>- Implementar tratamento de erros e retries<br>- Testes de integração (success/failure) |
 | US04 | Como sistema, quero replicar o cadastro do cliente no CRM para centralizar informações comerciais. | Should | To Do | Sprint 2 | - Mapear dados necessários para CRM<br>- Criar fluxo de integração com CRM via N8N<br>- Validar registro do cliente no CRM<br>- Criar logs/alertas para falhas |
 
 ### Épico 3 – Comunicação e Notificações
@@ -75,12 +75,12 @@ Histórias priorizadas pelo método **MoSCoW** (Must/Should).
 ## Red Flags / Pontos Críticos
 
 1. **Dependências Técnicas**  
-   - Integração com APIs externas (Runy, CRM) e configuração segura de autenticação.  
+   - Integração com APIs externas (plataforma, CRM) e configuração segura de autenticação.  
    - Envio de e-mails automatizados e integração com N8N.  
    - **Mitigação:** Confirmar disponibilidade das APIs e credenciais antes da Sprint; realizar testes de conexão preliminares e validar ambientes (sandbox/produção).
 
 2. **Critérios de Sucesso**  
-   - Todos os dados válidos devem criar registros corretos nas plataformas (Runy e CRM).  
+   - Todos os dados válidos devem criar registros corretos nas plataformas (plataforma e CRM).  
    - Notificações (e-mails ou alertas internos) devem ser enviadas corretamente e sem perdas.  
    - **Mitigação:** Criar testes automatizados, cenários de integração e testes de entrega de e-mail (SPF/DKIM/DMARC verificados).
 
@@ -98,7 +98,7 @@ Histórias priorizadas pelo método **MoSCoW** (Must/Should).
 ## Observações finais / Próximos passos sugeridos
 
 - Vincular cada US a **issues** no GitHub (quando iniciar desenvolvimento) para rastrear tarefas técnicas e dependências.  
-- Preparar ambiente de testes (sandbox) para Runy e CRM antes da Sprint 1.  
+- Preparar ambiente de testes (sandbox) para plataforma e CRM antes da Sprint 1.  
 - Validar templates de e-mail e configurações de entrega com time de infraestrutura.  
 - Criar Project Board (Kanban) para Sprint 1 com colunas: Backlog / To Do / In Progress / Done.
 
